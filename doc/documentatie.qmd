@@ -5,19 +5,109 @@ date: today
 format: html
 ---
 
-## Introducere
+# 1. Copertă
 
-Acest document conține documentația pentru proiectul de Statistică și Probabilități.
+**Nume proiect:** Proiect Statistică și Probabilități  
+**Lider:** [Nume Lider]  
+**Grupa:** 242  
+**An universitar:** 2025-2026
 
-## Structura Proiectului
+---
 
-Proiectul este organizat în următoarele componente:
+# 2. Descriere generală
 
-- **ex1**: Exercițiul 1
-- **ex2_shiny**: Exercițiul 2 (aplicație Shiny)
-- **ex3**: Exercițiul 3
-- **doc**: Documentație
+*Secțiune completată de lider.*
 
-## Descriere
+[Descrierea generală a proiectului]
 
-*Completați cu detaliile proiectului dvs.*
+---
+
+# 3. Exercițiul 1
+
+*Secțiune scrisă doar de A.*
+
+[Descrierea și implementarea exercițiului 1]
+
+---
+
+# 4. Exercițiul 2
+
+*Secțiune scrisă doar de B.*
+
+[Descrierea și implementarea exercițiului 2 - aplicație Shiny]
+
+---
+
+# 5. Exercițiul 3
+
+*Secțiune scrisă doar de C.*
+
+[Descrierea și implementarea exercițiului 3]
+
+---
+
+# 6. Pachete & surse
+
+*Fiecare membru adaugă pachetele și sursele folosite.*
+
+## Pachete utilizate
+
+- **R packages:** 
+  - [Listă pachete]
+
+## Surse bibliografice
+
+- [Surse utilizate]
+
+---
+
+# 7. Dificultăți
+
+*Fiecare membru adaugă 3–4 bullet points.*
+
+## Membru A
+- [Dificultate 1]
+- [Dificultate 2]
+- [Dificultate 3]
+- [Dificultate 4]
+
+## Membru B
+- [Dificultate 1]
+- [Dificultate 2]
+- [Dificultate 3]
+- [Dificultate 4]
+
+## Membru C
+- [Dificultate 1]
+- [Dificultate 2]
+- [Dificultate 3]
+- [Dificultate 4]
+
+---
+
+# 8. Probleme deschise
+
+*Fiecare membru adaugă 2–3 probleme deschise.*
+
+## Membru A
+- [Problemă deschisă 1]
+- [Problemă deschisă 2]
+- [Problemă deschisă 3]
+
+## Membru B
+- [Problemă deschisă 1]
+- [Problemă deschisă 2]
+- [Problemă deschisă 3]
+
+## Membru C
+- [Problemă deschisă 1]
+- [Problemă deschisă 2]
+- [Problemă deschisă 3]
+
+---
+
+# 9. Concluzii
+
+*Secțiune completată de lider.*
+
+[Concluziile proiectului]
