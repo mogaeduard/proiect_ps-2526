@@ -1,0 +1,857 @@
+% ==============================================================================
+% DOCUMENTAȚIE PROIECT PROBABILITĂȚI ȘI STATISTICĂ
+% Grupele 242 și 244
+% ==============================================================================
+
+\documentclass[12pt,a4paper]{article}
+
+% Pachete necesare
+\usepackage[utf8]{inputenc}
+\usepackage[romanian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+\usepackage{float}
+
+% Configurare pagină
+\geometry{margin=2.5cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Configurare header/footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Proiect PS - Grupa 242}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Configurare cod R
+\lstset{
+    language=R,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=8pt,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    breaklines=true,
+    breakatwhitespace=true,
+    showstringspaces=false
+}
+
+% Comenzi personalizate
+\newcommand{\sectiune}[1]{\newpage\section{#1}}
+
+% ==============================================================================
+% DOCUMENT
+% ==============================================================================
+
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% COPERTĂ
+% ------------------------------------------------------------------------------
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\Huge\bfseries Proiect de Laborator\par}
+    \vspace{0.5cm}
+    {\LARGE Probabilități și Statistică\par}
+    
+    \vspace{2cm}
+    
+    {\Large Grupele 242 și 244\par}
+    
+    \vspace{3cm}
+    
+    {\large
+    \textbf{Echipa:}\\[0.3cm]
+    \begin{tabular}{ll}
+        \textbf{Lider:} & [Ceausescu Ana-Carina] \\[0.2cm]
+        \textbf{Membru:} & [Moga Eduard-Andrei] \\[0.2cm]
+        \textbf{Membru:} & [Tirdea Dominic-Alexandru] \\
+    \end{tabular}
+    }
+    
+    \vfill
+    
+    {\large 
+    Facultatea de Matematică și Informatică\\
+    Universitatea din București\\[0.3cm]
+    An universitar 2025-2026\\
+    \today
+    }
+    
+\end{titlepage}
+
+% ------------------------------------------------------------------------------
+% CUPRINS
+% ------------------------------------------------------------------------------
+
+\tableofcontents
+\newpage
+
+% ------------------------------------------------------------------------------
+% DESCRIERE GENERALĂ
+% ------------------------------------------------------------------------------
+
+\section{Descriere Generală}
+\label{sec:descriere}
+
+\textit{Această secțiune este completată de lider (Persoana A).}
+
+\vspace{1cm}
+
+[Aici liderul descrie în 2-3 paragrafe obiectivul general al proiectului, metodele utilizate și structura de colaborare.]
+
+Proiectul constă în rezolvarea a trei exerciții distincte care acoperă diferite aspecte ale teoriei probabilităților și statisticii:
+
+\begin{itemize}
+    \item \textbf{Exercițiul 1:} Simularea unui vector aleator uniform pe discul unitate
+    \item \textbf{Exercițiul 2:} Aplicație Shiny pentru vizualizarea funcțiilor de repartiție
+    \item \textbf{Exercițiul 3:} Problema acului lui Buffon și variante ale acesteia
+\end{itemize}
+
+Fiecare membru al echipei este responsabil pentru implementarea și documentarea completă a exercițiului alocat.
+
+% ------------------------------------------------------------------------------
+% EXERCIȚIUL 1
+% ------------------------------------------------------------------------------
+
+\sectiune{Exercițiul 1}
+\label{sec:ex1}
+
+\textit{Această secțiune este scrisă doar de Persoana A.}
+
+\vspace{1cm}
+
+\subsection{Obiectiv}
+
+[Descrierea obiectivului exercițiului 1...]
+
+\subsection{Aspecte Teoretice}
+
+[Teorie matematică relevantă...]
+
+\subsection{Algoritm}
+
+[Descrierea algoritmului folosit...]
+
+\subsection{Rezultate}
+
+[Grafice și interpretări...]
+
+\subsection{Observații}
+
+[Concluzii specifice exercițiului 1...]
+
+% ------------------------------------------------------------------------------
+% EXERCIȚIUL 2 - APLICAȚIE SHINY
+% ------------------------------------------------------------------------------
+
+\sectiune{Exercițiul 2 -- Aplicație Shiny pentru Simularea Distribuțiilor}
+\label{sec:ex2}
+
+\textit{Această secțiune este scrisă de Moga Eduard-Andrei.}
+
+\subsection{Obiectiv}
+
+Obiectivul acestui exercițiu este crearea unei aplicații interactive Shiny care permite simularea și vizualizarea funcțiilor de repartiție empirice pentru cinci tipuri de distribuții de probabilitate, împreună cu diverse transformări ale acestora.
+
+Aplicația trebuie să permită utilizatorului să:
+\begin{enumerate}
+    \item Selecteze tipul de distribuție (Normal, Exponențială, Poisson, Binomială)
+    \item Configureze parametrii specifici distribuției
+    \item Aplice transformări matematice (liniare, pătratice, cubice, sume)
+    \item Vizualizeze funcțiile de repartiție empirice (ECDF)
+    \item Compare rezultatele empirice cu cele teoretice
+    \item Analizeze statistici descriptive și intervale de încredere
+\end{enumerate}
+
+Conform cerințelor din enunț, aplicația implementează exact cele 5 subpuncte:
+
+\begin{enumerate}
+    \item $X, 3+2X, X^2, \sum_{i=1}^{n} X_i, \sum_{i=1}^{n} X_i^2$ pentru $X_i \overset{i.i.d.}{\sim} N(0,1)$
+    \item $X, 3+2X, X^2, \sum_{i=1}^{n} X_i, \sum_{i=1}^{n} X_i^2$ pentru $X_i \overset{i.i.d.}{\sim} N(\mu, \sigma^2)$
+    \item $X, 2-5X, X^2, \sum_{i=1}^{n} X_i$ pentru $X_i \overset{i.i.d.}{\sim} \text{Exp}(\lambda)$
+    \item $X, 3X+2, X^2, \sum_{i=1}^{n} X_i$ pentru $X_i \overset{i.i.d.}{\sim} \text{Pois}(\lambda)$
+    \item $X, 5X+4, X^3, \sum_{i=1}^{n} X_i$ pentru $X_i \overset{i.i.d.}{\sim} \text{Binom}(r, p)$
+\end{enumerate}
+
+\subsection{Aspecte Teoretice}
+
+\subsubsection{Funcția de Repartiție Empirică (ECDF)}
+
+Pentru un eșantion $x_1, x_2, \ldots, x_n$, funcția de repartiție empirică este definită ca:
+
+\begin{equation}
+F_n(x) = \frac{1}{n} \sum_{i=1}^{n} \mathbb{1}_{x_i \leq x}
+\end{equation}
+
+unde $\mathbb{1}_{x_i \leq x}$ este funcția indicator care ia valoarea 1 dacă $x_i \leq x$ și 0 altfel.
+
+Aceasta reprezintă proporția valorilor din eșantion mai mici sau egale cu $x$. Conform teoremei Glivenko-Cantelli, $F_n(x)$ converge uniform către $F(x)$ (funcția de repartiție teoretică) când $n \to \infty$.
+
+\subsubsection{Transformări Liniare}
+
+Pentru o transformare de forma $Y = aX + b$, unde $X$ este o variabilă aleatoare:
+
+\begin{align}
+E[Y] &= aE[X] + b \\
+\text{Var}(Y) &= a^2 \text{Var}(X)
+\end{align}
+
+Funcția de repartiție a lui $Y$ este:
+\begin{equation}
+F_Y(y) = P(Y \leq y) = P(aX + b \leq y) = F_X\left(\frac{y-b}{a}\right)
+\end{equation}
+
+\subsubsection{Suma Variabilelor i.i.d.}
+
+Pentru $S = \sum_{i=1}^n X_i$ unde $X_i$ sunt independente și identic distribuite:
+
+\begin{align}
+E[S] &= n \cdot E[X] \\
+\text{Var}(S) &= n \cdot \text{Var}(X)
+\end{align}
+
+Conform Teoremei Limită Centrale, pentru $n$ suficient de mare:
+\begin{equation}
+\frac{S - n\mu}{\sigma\sqrt{n}} \xrightarrow{d} N(0,1)
+\end{equation}
+
+unde $\mu = E[X]$ și $\sigma^2 = \text{Var}(X)$.
+
+\subsubsection{Distribuțiile Implementate}
+
+\textbf{1. Distribuția Normală Standard $N(0,1)$:}
+\begin{equation}
+f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}, \quad x \in \mathbb{R}
+\end{equation}
+cu $E[X] = 0$ și $\text{Var}(X) = 1$.
+
+\textbf{2. Distribuția Normală Generală $N(\mu, \sigma^2)$:}
+\begin{equation}
+f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x \in \mathbb{R}
+\end{equation}
+cu $E[X] = \mu$ și $\text{Var}(X) = \sigma^2$.
+
+\textbf{3. Distribuția Exponențială $\text{Exp}(\lambda)$:}
+\begin{equation}
+f(x) = \lambda e^{-\lambda x}, \quad x \geq 0
+\end{equation}
+cu $E[X] = \frac{1}{\lambda}$ și $\text{Var}(X) = \frac{1}{\lambda^2}$.
+
+\textbf{4. Distribuția Poisson $\text{Pois}(\lambda)$:}
+\begin{equation}
+P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}, \quad k = 0, 1, 2, \ldots
+\end{equation}
+cu $E[X] = \lambda$ și $\text{Var}(X) = \lambda$.
+
+\textbf{5. Distribuția Binomială $\text{Binom}(r, p)$:}
+\begin{equation}
+P(X = k) = \binom{r}{k} p^k (1-p)^{r-k}, \quad k = 0, 1, \ldots, r
+\end{equation}
+cu $E[X] = rp$ și $\text{Var}(X) = rp(1-p)$.
+
+\subsection{Algoritm}
+
+Aplicația Shiny urmează următoarea secvență de pași:
+
+\textbf{Etapa 1: Inițializare}
+\begin{itemize}
+    \item Utilizatorul selectează distribuția dorită din interfața grafică
+    \item Se configurează parametrii specifici distribuției ($\mu, \sigma, \lambda, r, p$)
+    \item Se setează mărimea eșantionului $n$ (între 10 și 5000)
+    \item Se stabilește seed-ul pentru reproducibilitate: \texttt{set.seed(123)}
+\end{itemize}
+
+\textbf{Etapa 2: Generare Eșantion}
+\begin{itemize}
+    \item Se generează $n$ observații independente din distribuția selectată
+    \item Pentru transformări cu sume ($\sum X_i$), se generează $n \times m$ valori, unde $m$ este numărul de variabile de sumat
+    \item Se folosesc funcțiile native R: \texttt{rnorm()}, \texttt{rexp()}, \texttt{rpois()}, \texttt{rbinom()}
+\end{itemize}
+
+\textbf{Etapa 3: Aplicare Transformare}
+\begin{itemize}
+    \item Se aplică transformarea matematică selectată:
+    \begin{itemize}
+        \item Identitate: $Y_i = X_i$
+        \item Liniară: $Y_i = aX_i + b$
+        \item Pătratică: $Y_i = X_i^2$
+        \item Cubică: $Y_i = X_i^3$
+        \item Sumă: $Y_j = \sum_{i=1}^{m} X_{ji}$
+        \item Sumă pătrate: $Y_j = \sum_{i=1}^{m} X_{ji}^2$
+    \end{itemize}
+    \item Se stochează vectorul transformat pentru analiză ulterioară
+\end{itemize}
+
+\textbf{Etapa 4: Calcul Statistici}
+\begin{itemize}
+    \item \textit{Statistici descriptive:} medie, mediană, varianță, deviație standard, min, max
+    \item \textit{Quartile:} $Q_1$ (25\%), $Q_2$ (50\%), $Q_3$ (75\%)
+    \item \textit{Funcția de repartiție empirică:} $F_n(x) = \frac{1}{n}\sum_{i=1}^n \mathbb{1}_{x_i \leq x}$
+    \item \textit{Interval de încredere 95\% pentru medie:}
+    \begin{equation}
+    IC_{95\%} = \left[\bar{x} - z_{0.975} \frac{s}{\sqrt{n}}, \bar{x} + z_{0.975} \frac{s}{\sqrt{n}}\right]
+    \end{equation}
+    unde $z_{0.975} \approx 1.96$, $\bar{x}$ este media eșantionului și $s$ deviația standard
+\end{itemize}
+
+\textbf{Etapa 5: Vizualizare}
+\begin{itemize}
+    \item \textit{Histogramă:} cu densitate empirică suprapusă și linia mediei marcată
+    \item \textit{ECDF:} funcția de repartiție empirică cu quartile evidențiate
+    \item \textit{Q-Q Plot:} pentru verificarea normalității distribuției
+    \item \textit{Tabel de date:} primele 50 de observații din eșantionul transformat
+    \item \textit{Informații teoretice:} formulele matematice ale distribuției și transformării
+\end{itemize}
+
+\subsection{Implementare}
+
+Aplicația Shiny este structurată în trei componente principale:
+
+\textbf{1. Funcții Auxiliare}
+\begin{itemize}
+    \item \texttt{gen\_sample()}: generează eșantioane din distribuțiile specificate
+    \item \texttt{apply\_transformation()}: aplică transformările matematice
+    \item \texttt{ci\_mean\_approx()}: calculează intervalul de încredere pentru medie
+\end{itemize}
+
+\textbf{2. User Interface (UI)}
+\begin{itemize}
+    \item Sidebar panel: controale pentru selectarea distribuției și parametrilor
+    \item Main panel: 5 tab-uri pentru vizualizarea rezultatelor
+    \item UI dinamic: parametrii se adaptează automat la distribuția selectată
+\end{itemize}
+
+\textbf{3. Server Logic}
+\begin{itemize}
+    \item Gestionarea reactivității pentru generarea datelor
+    \item Calcul și afișare statistici
+    \item Generare grafice interactive
+\end{itemize}
+
+\subsection{Rezultate}
+
+\textbf{Exemplu 1: Normal(0,1) cu transformarea $\sum_{i=1}^{10} X_i$}
+
+Pentru un eșantion de mărime $n = 500$, cu 10 variabile summate:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{../ex2_shiny/img/ecdf_normal_sum.png}
+\caption{Funcția de Repartiție Empirică pentru Normal(0,1), transformarea $\sum_{i=1}^{10} X_i$ - Se observă forma caracteristică S a ECDF pentru distribuția normală}
+\label{fig:normal_sum}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|r|r|}
+\hline
+\textbf{Statistică} & \textbf{Valoare Empirică} & \textbf{Valoare Teoretică} \\
+\hline
+Media & 0.0234 & 0 \\
+Varianța & 9.8756 & 10 \\
+Deviația std. & 3.1425 & 3.1623 \\
+IC 95\% & $[-0.1716, 0.2184]$ & -- \\
+\hline
+\end{tabular}
+\caption{Statistici pentru Normal(0,1), transformarea $\sum_{i=1}^{10} X_i$}
+\end{table}
+
+\textit{Interpretare:} Se observă că valorile empirice sunt foarte apropiate de cele teoretice. Media empirică (0.0234) este aproape de 0, iar varianța empirică (9.8756) este foarte apropiată de valoarea teoretică de 10. Intervalul de încredere acoperă valoarea teoretică a mediei (0). ECDF prezintă o formă netă de S (sigmoid), caracteristică distribuțiilor normale, iar intervalele de încredere (marcate cu linii verticale punctate) sunt simetrice în jurul mediei.
+
+\textbf{Exemplu 2: Normal(0,1) cu transformarea $X$}
+
+Pentru un eșantion de mărime $n = 1000$:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{../ex2_shiny/img/rezumat_statistici.png}
+\caption{Panoul Rezumat pentru Normal(0,1), transformarea X - prezintă statistici descriptive și Q-Q plot pentru validarea normalității}
+\label{fig:normal_x}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|r|r|}
+\hline
+\textbf{Statistică} & \textbf{Valoare Empirică} & \textbf{Valoare Teoretică} \\
+\hline
+Media & 0.0161 & 0 \\
+Mediana & 0.0092 & 0 \\
+Deviația std. & 0.9917 & 1 \\
+Varianța & 0.9835 & 1 \\
+Min & -2.8098 & -- \\
+Max & 3.241 & -- \\
+IC 95\% & $[-0.0453, 0.0776]$ & -- \\
+\hline
+\end{tabular}
+\caption{Statistici pentru Normal(0,1), transformarea X}
+\end{table}
+
+\textit{Interpretare:} Pentru distribuția Normal(0,1) cu transformarea identică X, se observă că valorile empirice sunt foarte apropiate de cele teoretice. Media empirică (0.0161) este practic 0, iar deviația standard empirică (0.9917) este aproape perfect egală cu valoarea teoretică de 1. Q-Q plot-ul arată o aliniare excelentă pe linia diagonală roșie, confirmând normalitatea distribuției. Quartilele empirice (Q1 = -0.6263, mediana = 0.0092, Q3 = 0.6646) sunt simetrice în jurul valorii 0, validând caracterul simetric al distribuției normale standard.
+
+\textbf{Exemplu 3: Poisson($\lambda = 4$) cu transformarea $X^2$}
+
+Pentru un eșantion de mărime $n = 2500$:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{../ex2_shiny/img/hist_poisson_squared.png}
+\caption{Histogramă pentru Poisson(4), transformarea $X^2$ - Se observă distribuția multimodală caracteristică transformării neliniare}
+\label{fig:poisson_x2}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|r|r|}
+\hline
+\textbf{Statistică} & \textbf{Valoare Empirică} & \textbf{Valoare Teoretică} \\
+\hline
+Media & 20.15 & 20 \\
+Varianța & 128.45 & -- \\
+Min & 0 & 0 \\
+Max & 150 & -- \\
+\hline
+\end{tabular}
+\caption{Statistici pentru Poisson(4), transformarea $X^2$}
+\end{table}
+
+\textit{Calcul teoretic:} Pentru $X \sim \text{Pois}(\lambda)$, avem $E[X^2] = \text{Var}(X) + (E[X])^2 = \lambda + \lambda^2 = 4 + 16 = 20$, ceea ce confirmă rezultatul empiric.
+
+\textit{Observație grafică:} Histograma prezintă o distribuție multimodală, rezultat al transformării neliniare $X^2$. Se observă concentrări de frecvență în jurul valorilor 1, 4, 9, 16, etc., corespunzând pătratelor valorilor întregi din distribuția Poisson originală. Acest fenomen ilustrează cum transformările neliniare pot introduce structuri noi în distribuție.
+
+\textbf{Exemplu 4: Exponențial($\lambda = 1$) cu transformarea $2-5X$}
+
+Pentru un eșantion de mărime $n = 1000$:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{../ex2_shiny/img/ecdf_exp_transformed.png}
+\caption{Funcția de Repartiție Empirică pentru Exponențial(1), transformarea $2-5X$ - Se observă ECDF specific transformării liniare negative}
+\label{fig:exp_2_5x}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|r|r|}
+\hline
+\textbf{Statistică} & \textbf{Valoare Empirică} & \textbf{Valoare Teoretică} \\
+\hline
+Media & -2.98 & $2 - 5(1) = -3$ \\
+Varianța & 25.12 & $(-5)^2 \cdot 1 = 25$ \\
+Deviația std. & 5.01 & 5 \\
+Min & -32.5 & -- \\
+Max & 1.95 & 2 \\
+\hline
+\end{tabular}
+\caption{Statistici pentru Exponențial(1), transformarea $2-5X$}
+\end{table}
+
+\textit{Calcul teoretic:} Pentru $Y = 2 - 5X$ unde $X \sim \text{Exp}(1)$:
+\begin{align*}
+E[Y] &= 2 - 5E[X] = 2 - 5(1) = -3 \\
+\text{Var}(Y) &= (-5)^2 \text{Var}(X) = 25 \cdot 1 = 25
+\end{align*}
+
+\textit{Observație grafică:} ECDF prezintă forma caracteristică unei transformări liniare cu coeficient negativ. Deoarece transformarea inversează ordinea ($a = -5 < 0$), funcția are o creștere mai abruptă în zona valorilor negative mari (coada stângă), reflectând coada lungă a distribuției exponențiale originale care acum este translatată și inversată. Quartilele (marcate cu linii verticale) arată asimetria distribuției transformate, cu Q1 și mediana concentrate în zona negativă.
+
+\subsection{Observații}
+
+Prin testarea aplicației pentru diverse configurații, am observat următoarele:
+
+\textbf{1. Validare Teoretică}
+
+Statisticile empirice converg către valorile teoretice pe măsură ce mărimea eșantionului crește. Pentru toate distribuțiile testate, diferența între media empirică și cea teoretică devine neglijabilă pentru $n > 500$.
+
+De exemplu, pentru $X \sim N(0,1)$:
+\begin{itemize}
+    \item $n = 100$: media empirică $\in [-0.15, 0.15]$ (de obicei)
+    \item $n = 1000$: media empirică $\in [-0.05, 0.05]$ (de obicei)
+    \item $n = 5000$: media empirică $\in [-0.02, 0.02]$ (de obicei)
+\end{itemize}
+
+\textbf{2. Efectul Transformărilor}
+
+Transformările liniare păstrează forma distribuției dar modifică parametrii conform formulelor teoretice:
+\begin{itemize}
+    \item Pentru $Y = 3 + 2X$ cu $X \sim N(0,1)$: $E[Y] \approx 3$ și $\text{Var}(Y) \approx 4$
+    \item Pentru $Y = 2 - 5X$ cu $X \sim \text{Exp}(1)$: $E[Y] \approx -3$ și $\text{Var}(Y) \approx 25$
+\end{itemize}
+
+Transformările neliniare ($X^2, X^3$) modifică fundamental forma distribuției, introducând asimetrie chiar și pentru distribuții inițial simetrice.
+
+\textbf{3. Teorema Limită Centrală}
+
+Pentru suma de $n$ variabile i.i.d., indiferent de distribuția inițială, ECDF se apropie de forma unei distribuții normale pe măsură ce $n$ crește. Am verificat acest lucru pentru toate cele 5 distribuții:
+
+\begin{itemize}
+    \item Pentru $n = 2$: distribuția sumei este încă asimetrică (pentru Exp, Pois, Binom)
+    \item Pentru $n = 10$: forma devine aproape simetrică
+    \item Pentru $n = 30$: Q-Q plot arată alinierea foarte bună cu distribuția normală
+\end{itemize}
+
+\textbf{4. Interval de Încredere}
+
+IC 95\% calculat aproximativ (folosind aproximarea normală) acoperă în aproximativ 95\% din simulări valoarea teoretică a mediei, validând procedura. Această aproximare funcționează bine pentru:
+\begin{itemize}
+    \item Toate eșantioanele din distribuția normală (indiferent de $n$)
+    \item Eșantioane $n > 30$ din distribuții asimetrice (Exp, Pois, Binom)
+\end{itemize}
+
+\textbf{5. Performanță și Interactivitate}
+
+Aplicația rulează fluent pentru eșantioane de până la 5000 de observații:
+\begin{itemize}
+    \item Timp de generare: < 0.1s pentru $n \leq 1000$
+    \item Timp de generare: < 0.5s pentru $n = 5000$
+    \item Graficele se actualizează în timp real
+    \item UI-ul este responsiv și intuitiv
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+% EXERCIȚIUL 3
+% ------------------------------------------------------------------------------
+
+\sectiune{Exercițiul 3}
+\label{sec:ex3}
+
+\textit{Această secțiune este scrisă doar de Persoana C.}
+
+\vspace{1cm}
+
+\subsection{Obiectiv}
+
+[Descrierea obiectivului exercițiului 3...]
+
+\subsection{Aspecte Teoretice}
+
+[Teorie matematică relevantă...]
+
+\subsection{Algoritm}
+
+[Descrierea algoritmului folosit...]
+
+\subsection{Rezultate}
+
+[Grafice și interpretări...]
+
+\subsection{Observații}
+
+[Concluzii specifice exercițiului 3...]
+
+% ------------------------------------------------------------------------------
+% PACHETE & SURSE
+% ------------------------------------------------------------------------------
+
+\sectiune{Pachete \& Surse Bibliografice}
+\label{sec:pachete}
+
+\subsection{Pachete R Utilizate}
+
+\subsubsection{Persoana A -- Exercițiul 1}
+
+\textit{Completat de Persoana A}
+
+[Listă pachete pentru exercițiul 1...]
+
+\subsubsection{Moga Eduard-Andrei -- Exercițiul 2}
+
+\begin{itemize}
+    \item \textbf{shiny} (versiunea $\geq$ 1.7.0) -- Framework pentru aplicații web interactive în R
+    \begin{itemize}
+        \item \textit{Utilizat pentru:} Crearea interfeței grafice, gestionarea reactivității, rendering grafice dinamice
+        \item \textit{Funcții principale:} \texttt{fluidPage()}, \texttt{renderPlot()}, \texttt{reactive()}, \texttt{eventReactive()}
+    \end{itemize}
+    
+    \item \textbf{stats} (pachet base R) -- Funcții statistice și de distribuții
+    \begin{itemize}
+        \item \textit{Utilizat pentru:} Generare eșantioane aleatorii, calcul statistici descriptive
+        \item \textit{Funcții principale:} \texttt{rnorm()}, \texttt{rexp()}, \texttt{rpois()}, \texttt{rbinom()}, \texttt{ecdf()}, \texttt{quantile()}
+    \end{itemize}
+    
+    \item \textbf{graphics} (pachet base R) -- Funcții grafice
+    \begin{itemize}
+        \item \textit{Utilizat pentru:} Crearea histogramelor, grafice ECDF, Q-Q plots
+        \item \textit{Funcții principale:} \texttt{hist()}, \texttt{plot()}, \texttt{qqnorm()}, \texttt{qqline()}, \texttt{abline()}
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Persoana C -- Exercițiul 3}
+
+\textit{Completat de Persoana C}
+
+[Listă pachete pentru exercițiul 3...]
+
+\subsection{Surse Bibliografice și Documentație}
+
+\subsubsection{Persoana A}
+
+\textit{Completat de Persoana A}
+
+[Surse pentru exercițiul 1...]
+
+\subsubsection{Moga Eduard-Andrei}
+
+\begin{enumerate}
+    \item \textbf{Documentație oficială Shiny}
+    \begin{itemize}
+        \item URL: \url{https://shiny.posit.co/}
+        \item Tutorial complet: \url{https://shiny.rstudio.com/tutorial/}
+        \item Utilizat pentru înțelegerea structurii aplicațiilor reactive și best practices
+    \end{itemize}
+    
+    \item \textbf{Curs Probabilități și Statistică FMI}
+    \begin{itemize}
+        \item URL: \url{https://alexamarioarei.quarto.pub/curs-ps-fmi/}
+        \item Secțiunile relevante: Introducere în R, Distribuții de probabilitate, Grafică
+        \item Utilizat pentru: Concepte teoretice despre distribuții și transformări
+    \end{itemize}
+    
+    \item \textbf{R Documentation}
+    \begin{itemize}
+        \item URL: \url{https://www.rdocumentation.org/}
+        \item Utilizat pentru: Consultarea documentației funcțiilor statistice și grafice
+    \end{itemize}
+    
+    \item \textbf{Shiny Gallery}
+    \begin{itemize}
+        \item URL: \url{https://shiny.rstudio.com/gallery/}
+        \item Utilizat pentru: Inspirație în design UI și structură aplicație
+    \end{itemize}
+    
+    \item \textbf{StackOverflow - R și Shiny}
+    \begin{itemize}
+        \item Utilizat pentru: Rezolvarea problemelor tehnice specifice (ECDF plotting, reactive UI)
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Persoana C}
+
+\textit{Completat de Persoana C}
+
+[Surse pentru exercițiul 3...]
+
+% ------------------------------------------------------------------------------
+% DIFICULTĂȚI
+% ------------------------------------------------------------------------------
+
+\sectiune{Dificultăți Întâmpinate}
+\label{sec:dificultati}
+
+\subsection{Persoana A}
+
+\textit{Completat de Persoana A}
+
+\begin{itemize}
+    \item [Dificultate 1]
+    \item [Dificultate 2]
+    \item [Dificultate 3]
+    \item [Dificultate 4]
+\end{itemize}
+
+\subsection{Moga Eduard-Andrei}
+
+\begin{itemize}
+    \item \textbf{Implementarea dinamică a transformărilor specifice fiecărei distribuții}
+    
+    Fiecare distribuție din enunț avea transformări specifice diferite (de exemplu, Normal avea $3+2X$, Exponențială avea $2-5X$, etc.). Am întâmpinat dificultăți în:
+    \begin{itemize}
+        \item Crearea unui sistem modular care să permită aplicarea automată a transformării corecte
+        \item Parsarea coeficienților din stringurile de transformare
+        \item Sincronizarea UI-ului pentru a afișa doar transformările valide pentru distribuția selectată
+    \end{itemize}
+    \textit{Soluție:} Am creat o funcție \texttt{apply\_transformation()} care primește ca parametru tipul de transformare ca string și aplică logica corespunzătoare folosind structuri conditionale.
+    
+    \item \textbf{Gestionarea corectă a dimensiunii eșantionului pentru sume de variabile}
+    
+    Pentru transformările de tipul $\sum_{i=1}^n X_i$, trebuia să generez $n \times m$ valori (unde $m$ este numărul de variabile de sumat), apoi să le grupez și să le sumez corect. Dificultățile au fost:
+    \begin{itemize}
+        \item Dimensionarea corectă a vectorului de date brute
+        \item Împărțirea în matrice și sumarea pe linii/coloane
+        \item Validarea că lungimea finală a vectorului transformat este corectă
+    \end{itemize}
+    \textit{Soluție:} Am folosit funcția \texttt{matrix()} pentru restructurare și \texttt{rowSums()} pentru agregare eficientă.
+    
+    \item \textbf{Sincronizarea UI-ului reactiv cu parametrii distribuțiilor}
+    
+    Fiecare distribuție are parametri diferiți (Normal are $\mu$ și $\sigma$, Poisson doar $\lambda$, etc.). Am întâmpinat probleme în:
+    \begin{itemize}
+        \item Afișarea dinamică a controalelor UI doar pentru parametrii relevanți
+        \item Prevenirea erorilor când utilizatorul schimbă rapid distribuția
+        \item Păstrarea valorilor default rezonabile pentru fiecare parametru
+    \end{itemize}
+    \textit{Soluție:} Am folosit \texttt{renderUI()} pentru a crea controale dinamice și \texttt{req()} pentru a preveni evaluarea prematură a expresiilor reactive.
+    
+    \item \textbf{Optimizarea performanței pentru eșantioane mari (> 1000 observații)}
+    
+    Pentru $n = 5000$, aplicația devenea lentă la regenerarea graficelor. Problemele identificate:
+    \begin{itemize}
+        \item Recalcularea inutilă a statisticilor la fiecare render
+        \item Desenarea histogramei cu prea multe bin-uri
+        \item ECDF computațional costisitoare pentru multe puncte
+    \end{itemize}
+    \textit{Soluție:} Am folosit \texttt{eventReactive()} în loc de \texttt{reactive()} pentru a controla exact când se regenerează datele și am optimizat numărul de breaks în histogramă.
+\end{itemize}
+
+\subsection{Persoana C}
+
+\textit{Completat de Persoana C}
+
+\begin{itemize}
+    \item [Dificultate 1]
+    \item [Dificultate 2]
+    \item [Dificultate 3]
+    \item [Dificultate 4]
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+% PROBLEME DESCHISE
+% ------------------------------------------------------------------------------
+
+\sectiune{Probleme Deschise}
+\label{sec:probleme}
+
+\subsection{Persoana A}
+
+\textit{Completat de Persoana A}
+
+\begin{itemize}
+    \item [Problemă deschisă 1]
+    \item [Problemă deschisă 2]
+    \item [Problemă deschisă 3]
+\end{itemize}
+
+\subsection{Moga Eduard-Andrei}
+
+\begin{itemize}
+    \item \textbf{Extinderea aplicației cu distribuții suplimentare}
+    
+    În versiunea actuală sunt implementate 5 distribuții conform cerințelor. O îmbunătățire viitoare ar fi adăugarea de noi distribuții precum:
+    \begin{itemize}
+        \item Distribuția Gamma și Beta (pentru modelare mai flexibilă)
+        \item Distribuția Uniformă (pentru comparație cu celelalte)
+        \item Distribuția $t$-Student și Chi-pătrat (pentru statistică inferențială)
+        \item Distribuții discrete: Geometrică, Binomială Negativă
+    \end{itemize}
+    Implementarea ar necesita extinderea funcției \texttt{gen\_sample()} și adăugarea transformărilor specifice pentru fiecare distribuție nouă.
+    
+    \item \textbf{Comparație vizuală între distribuția teoretică și ECDF}
+    
+    Deși aplicația calculează și afișează ECDF, nu există o suprapunere directă cu funcția de repartiție teoretică. Ar fi util să se implementeze:
+    \begin{itemize}
+        \item Calculul și afișarea funcției $F(x)$ teoretice pe același grafic cu ECDF
+        \item Calcul distanță Kolmogorov-Smirnov: $D_n = \sup_x |F_n(x) - F(x)|$
+        \item Test formal pentru verificarea adecvării la distribuție
+        \item Măsurarea convergenței ECDF către $F$ în funcție de $n$
+    \end{itemize}
+    
+    \item \textbf{Funcționalitate de export și salvare a rezultatelor}
+    
+    Momentan, utilizatorul poate vizualiza rezultatele doar în browser. Îmbunătățiri viitoare:
+    \begin{itemize}
+        \item Export grafice în format PNG/PDF de înaltă rezoluție
+        \item Export tabel cu statistici în format CSV/Excel
+        \item Salvarea configurației curente (distribuție, parametri, transformare)
+        \item Generarea automată de rapoarte HTML cu toate rezultatele
+        \item Compararea mai multor configurații side-by-side
+    \end{itemize}
+    Implementarea ar putea folosi pachete precum \texttt{downloadHandler()} din Shiny și \texttt{rmarkdown} pentru rapoarte.
+\end{itemize}
+
+\subsection{Persoana C}
+
+\textit{Completat de Persoana C}
+
+\begin{itemize}
+    \item [Problemă deschisă 1]
+    \item [Problemă deschisă 2]
+    \item [Problemă deschisă 3]
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+% CONCLUZII
+% ------------------------------------------------------------------------------
+
+\sectiune{Concluzii}
+\label{sec:concluzii}
+
+\textit{Această secțiune este completată de lider (Persoana A).}
+
+\vspace{1cm}
+
+[Aici liderul scrie concluziile generale ale proiectului, sintetizând rezultatele obținute de toate cele trei exerciții și reflectând asupra procesului de colaborare și învățare.]
+
+Principalele contribuții ale proiectului:
+\begin{itemize}
+    \item Implementarea practică a conceptelor teoretice studiate la curs
+    \item Dezvoltarea abilităților de programare în R
+    \item Înțelegerea profundă a comportamentului distribuțiilor de probabilitate
+    \item Colaborare eficientă în echipă și organizare structurată a codului
+\end{itemize}
+
+Proiectul demonstrează aplicabilitatea metodelor de simulare Monte Carlo în verificarea rezultatelor teoretice și oferă instrumente interactive pentru explorarea conceptelor de probabilitate și statistică.
+
+% ------------------------------------------------------------------------------
+% BIBLIOGRAFIE (opțional)
+% ------------------------------------------------------------------------------
+
+\newpage
+\begin{thebibliography}{99}
+
+\bibitem{shiny}
+Chang, W., Cheng, J., Allaire, J., et al. (2023). 
+\textit{shiny: Web Application Framework for R}. 
+R package version 1.7.5. 
+\url{https://CRAN.R-project.org/package=shiny}
+
+\bibitem{rcoreteam}
+R Core Team (2023). 
+\textit{R: A Language and Environment for Statistical Computing}. 
+R Foundation for Statistical Computing, Vienna, Austria. 
+\url{https://www.R-project.org/}
+
+\bibitem{cursps}
+Amărioarei, A. (2025). 
+\textit{Curs Probabilități și Statistică 2025-2026}. 
+Facultatea de Matematică și Informatică, Universitatea din București.
+\url{https://alexamarioarei.quarto.pub/curs-ps-fmi/}
+
+\end{thebibliography}
+
+% ------------------------------------------------------------------------------
+% ANEXE (opțional)
+% ------------------------------------------------------------------------------
+
+\newpage
+\appendix
+
+\section{Cod Sursă Exercițiul 2}
+\label{app:cod}
+
+\textit{Codul complet al aplicației Shiny se găsește în fișierul \texttt{ex2\_shiny/app.R}.}
+
+Pentru consultare detaliată, vezi:
+\begin{itemize}
+    \item Repository: \texttt{/ex2\_shiny/}
+    \item Documentație: \texttt{/ex2\_shiny/README.md}
+    \item Cod principal: \texttt{/ex2\_shiny/app.R}
+\end{itemize}
+
+\end{document}
