@@ -1,0 +1,23 @@
+---
+title: "Documentație Proiect Statistică și Probabilități"
+author: "Grupa 242"
+date: today
+format: html
+---
+
+## Introducere
+
+Acest document conține documentația pentru proiectul de Statistică și Probabilități.
+
+## Structura Proiectului
+
+Proiectul este organizat în următoarele componente:
+
+- **ex1**: Exercițiul 1
+- **ex2_shiny**: Exercițiul 2 (aplicație Shiny)
+- **ex3**: Exercițiul 3
+- **doc**: Documentație
+
+## Descriere
+
+*Completați cu detaliile proiectului dvs.*
