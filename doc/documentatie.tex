@@ -1601,9 +1601,22 @@ Un aspect important este compromisul dintre timpul de execuție și precizie: un
 
 
 \begin{itemize}
-    \item [Problemă deschisă 1]
-    \item [Problemă deschisă 2]
-    \item [Problemă deschisă 3]
+    \item \textbf{Analiza erorilor}
+    \begin{itemize}
+      O primă problemă deschisă este legată de analiza erorii estimărilor obținute prin metoda Monte Carlo. În cadrul proiectului, s-a observat empiric convergența rezultatelor către valorile teoretice, însă nu a fost realizată o evaluare riguroasă a vitezei de convergență sau a intervalelor de încredere asociate estimărilor. O extindere naturală ar fi studiul variației erorii în funcție de numărul de simulări și compararea acesteia cu estimările teoretice oferite de legea numerelor mari sau de teorema limitei centrale.
+    \end{itemize}
+
+    \item \textbf{Generalizarea configurațiilor}
+    \begin{itemize}
+      O altă direcție de interes o reprezintă generalizarea configurațiilor geometrice. În acest proiect au fost analizate doar cazurile clasice (linii paralele, cruce, grid dreptunghiular). Ar putea fi studiate configurații mai complexe, cum ar fi grile neuniforme, linii dispuse sub unghiuri arbitrare sau obiecte cu forme diferite de ac (segmente curbe, poligoane).
+    \end{itemize}
+
+    \item \textbf{Optimizare algoritmilor}
+    \begin{itemize}
+      De asemenea, o problemă deschisă este optimizarea algoritmică a simulărilor. Metoda Monte Carlo utilizată este una directă (brute-force), fără tehnici de reducere a varianței. Introducerea unor metode precum importance sampling sau stratificarea domeniului ar putea conduce la estimări mai precise pentru același timp de execuție.1
+    \end{itemize}
+
+    
 \end{itemize}
 
 % ------------------------------------------------------------------------------

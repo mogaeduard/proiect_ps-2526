@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1769860440.24991 "documentatie.tex" "documentatie.pdf" "documentatie" 1769860440.97153 2
+["pdflatex"] 1769882175.49307 "documentatie.tex" "documentatie.pdf" "documentatie" 1769882176.22642 2
   "../ex2_shiny/img/ecdf_exp_transformed.png" 1769857173.66801 95416 512d9405419d8574d92268650767a093 ""
   "../ex2_shiny/img/ecdf_normal_sum.png" 1769857173.66868 99302 1983d1acbaf729729c13e86476722361 ""
   "../ex2_shiny/img/hist_poisson_squared.png" 1769857173.66868 82814 d87e632a07c13639bbb2c0e170581749 ""
@@ -130,10 +130,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1767555874 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1769804717 5011229 9e2a3c024ce745caba5794ee5595b35e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1769804699 2008246 83d8ae6276bcf082cca1dab32369154f ""
-  "documentatie.aux" 1769860440.91473 14547 fd408f8005dfef960a25c4720ddf6938 "pdflatex"
-  "documentatie.out" 1769860440.91573 14399 3e916533489972049578ae5590cd01d9 "pdflatex"
-  "documentatie.tex" 1769860438.29279 60050 21d6ec17bfc154dcaa87456b30e96245 ""
-  "documentatie.toc" 1769860440.91573 7743 a80598da322d5f62b1889bf8ca958ef4 "pdflatex"
+  "documentatie.aux" 1769882176.16767 14562 a7aeeb5f854d8666d0330dbb1844909e "pdflatex"
+  "documentatie.out" 1769882176.16975 14477 dc7cb046de3d2e9837d89d2c5ff055b9 "pdflatex"
+  "documentatie.tex" 1769882175.34167 61457 c99acb051995bab705f40290b1917e20 ""
+  "documentatie.toc" 1769882176.16975 7758 25a8b8a9030c89ef31981a6ba3f801a2 "pdflatex"
   (generated)
   "documentatie.aux"
   "documentatie.log"
