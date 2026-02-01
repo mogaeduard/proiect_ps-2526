@@ -210,8 +210,13 @@ Aceasta este valoarea cu care comparăm media empirică obținută prin simulare
 
 \begin{itemize}
     \item media teoretică a distanței față de origine este $\mathbb{E}[R]=2/3\approx 0.6667$;
-    \item media empirică rezultată din simulări este raportată de scripturile R (vezi fișierele din \texttt{ex1/}).
+    \item prin metoda acceptare-respingere, media empirică obținută este aproximativ $0.673$;
+    \item prin metoda polară, media empirică obținută este aproximativ $0.656$.
 \end{itemize}
+
+Se observă că ambele valori empirice sunt apropiate de valoarea teoretică,
+diferențele fiind explicate prin caracterul aleator al simulării și dimensiunea
+finita a eșantionului.
 
 \begin{figure}[H]
 \centering
@@ -230,12 +235,18 @@ Aceasta este valoarea cu care comparăm media empirică obținută prin simulare
 
 \subsection{Observații}
 
-Metoda acceptare-respingere este simplă de implementat, dar are o rată de acceptare aproximativ $\pi/4 \approx 0.785$,
-deoarece aria discului este $\pi$ iar aria pătratului este $4$.
+Metoda acceptare-respingere este simplă de implementat, dar are o rată de acceptare
+aproximativ $\pi/4 \approx 0.785$, deoarece aria discului este $\pi$ iar aria
+pătratului este $4$. În simularea realizată au fost acceptate 770 puncte din 1000,
+ceea ce corespunde unei rate de acceptare de aproximativ 77\%.
 
-Metoda polară generează direct puncte în disc fără respingeri, deci este mai eficientă.
+Metoda polară generează direct puncte în disc fără respingeri, deci este mai eficientă
+din punct de vedere computațional.
 
-În ambele cazuri, media empirică a distanței față de origine este apropiată de valoarea teoretică $2/3$, iar diferența scade când $N$ crește.
+În ambele cazuri, media empirică a distanței față de origine este apropiată de valoarea
+teoretică $2/3$. Pentru metoda acceptare-respingere s-a obținut aproximativ $0.673$,
+iar pentru metoda polară aproximativ $0.656$. Diferențele sunt explicate prin caracterul
+aleator al simulării și dimensiunea finită a eșantionului.
 
 
 % ------------------------------------------------------------------------------
