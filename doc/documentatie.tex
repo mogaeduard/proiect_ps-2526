@@ -115,7 +115,12 @@
 
 \vspace{1cm}
 
-[Aici liderul descrie în 2-3 paragrafe obiectivul general al proiectului, metodele utilizate și structura de colaborare.]
+Proiectul are ca scop aplicarea metodelor de simulare în R pentru a verifica rezultate teoretice din probabilități și statistică. Am rezolvat trei exerciții care acoperă: simularea uniformă pe mulțimi geometrice (discul unitate), vizualizarea distribuțiilor printr-o aplicație interactivă Shiny și estimarea unor probabilități geometrice / a lui $\pi$ prin experimente de tip Buffon.
+
+Implementările au fost făcute în R, cu accent pe reproducibilitate (setarea seed-ului) și pe interpretarea rezultatelor prin grafice și comparații cu valori teoretice. Documentația prezintă pentru fiecare exercițiu: obiectivul, partea teoretică necesară, algoritmul folosit, rezultate (inclusiv grafice) și observații.
+
+Colaborarea s-a făcut prin GitHub, fiecare membru lucrând pe exercițiul alocat și adăugând codul și secțiunea sa în documentație. Liderul a integrat contribuțiile într-un singur raport final și într-o arhivă care conține codul sursă și fișierele necesare rulării.
+
 
 Proiectul constă în rezolvarea a trei exerciții distincte care acoperă diferite aspecte ale teoriei probabilităților și statisticii:
 
@@ -1436,11 +1441,24 @@ Un aspect important este compromisul dintre timpul de execuție și precizie: un
 
 \subsection{Pachete R Utilizate}
 
-\subsubsection{Persoana A -- Exercițiul 1}
+\subsubsection{Ceaușescu Ana-Carina -- Exercițiul 1}
 
-\textit{Completat de Persoana A}
+\begin{itemize}
+    \item \textbf{stats} (pachet base R)
+    \begin{itemize}
+        \item Utilizat pentru: generarea variabilelor aleatoare uniforme
+        \item Funcții principale: \texttt{runif()}, \texttt{sqrt()}
+    \end{itemize}
 
-[Listă pachete pentru exercițiul 1...]
+    \item \textbf{graphics} (pachet base R)
+    \begin{itemize}
+        \item Utilizat pentru: reprezentări grafice ale punctelor
+        \item Funcții principale: \texttt{plot()}, \texttt{points()}, \texttt{abline()}
+    \end{itemize}
+\end{itemize}
+
+Scripturile au fost rulate folosind \textbf{R version 4.5.2 (2025-10-31)}.
+
 
 \subsubsection{Moga Eduard-Andrei -- Exercițiul 2}
 
@@ -1467,11 +1485,16 @@ Un aspect important este compromisul dintre timpul de execuție și precizie: un
 
 \subsection{Surse Bibliografice și Documentație}
 
-\subsubsection{Persoana A}
+\subsubsection{Ceaușescu Ana-Carina}
 
-\textit{Completat de Persoana A}
+\begin{enumerate}
+    \item Curs Probabilități și Statistică FMI, 
+    Alexandru Amărioarei (2025).
+    
+    \item Documentația oficială R:
+    \url{https://www.r-project.org/}
+\end{enumerate}
 
-[Surse pentru exercițiul 1...]
 
 \subsubsection{Moga Eduard-Andrei}
 
@@ -1531,7 +1554,7 @@ Un aspect important este compromisul dintre timpul de execuție și precizie: un
     
     \item \textbf{R Documentation}
     \begin{itemize}
-        \ietm URL: \url{https://www.rdocumentation.org/}
+        \item URL: \url{https://www.rdocumentation.org/}
         \item Utilizat pentru dezvoltarea simularilor
     \end{itemize}
     
