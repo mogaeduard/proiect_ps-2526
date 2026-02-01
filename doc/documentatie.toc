@@ -1,0 +1,89 @@
+\babel@toc {nil}{}\relax 
+\contentsline {section}{\numberline {1}Descriere Generală}{2}{section.1}%
+\contentsline {section}{\numberline {2}Exercițiul 1}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Obiectiv}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Aspecte Teoretice}{3}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Uniformitate pe pătrat}{3}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Acceptare-respingere pentru discul unitate}{3}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Distribuția lui $R$ și $\theta $ (metoda polară)}{3}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Media teoretică a distanței față de origine}{4}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.3}Algoritm}{4}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Metoda 1: Acceptare-respingere}{4}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Metoda 2: Coordonate polare}{4}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Rezultate}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Observații}{6}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Exercițiul 2 -- Aplicație Shiny pentru Simularea Distribuțiilor}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Obiectiv}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Aspecte Teoretice}{7}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Funcția de Repartiție Empirică (ECDF)}{7}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Transformări Liniare}{8}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Suma Variabilelor i.i.d.}{8}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Distribuțiile Implementate}{8}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}Algoritm}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Implementare}{10}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Rezultate}{11}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Observații}{14}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Exercițiul 3}{16}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Obiectiv}{16}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Aspecte Teoretice}{16}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Algoritm}{16}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Rezultate}{17}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Demonstrații teoretice}{17}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Modelul probabilistic}{17}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Simetrie și reducere la o singură bandă}{17}{subsubsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.2}Definiția variabilelor aleatoare}{18}{subsubsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.3}Distribuțiile lui $X$ și $\Theta $}{18}{subsubsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.7}Condiția geometrică de intersecție}{18}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Calculul probabilității}{19}{subsection.4.8}%
+\contentsline {subsubsection}{\numberline {4.8.1}Integrarea după $x$}{19}{subsubsection.4.8.1}%
+\contentsline {subsubsection}{\numberline {4.8.2}Integrarea după $\theta $}{19}{subsubsection.4.8.2}%
+\contentsline {subsection}{\numberline {4.9}Interpretare geometrică}{19}{subsection.4.9}%
+\contentsline {subsection}{\numberline {4.10}Concluzie}{19}{subsection.4.10}%
+\contentsline {subsection}{\numberline {4.11}Modelul probabilistic pentru cruce}{20}{subsection.4.11}%
+\contentsline {subsection}{\numberline {4.12}Scrierea lui $Z$ ca sumă de indicatori}{20}{subsection.4.12}%
+\contentsline {subsection}{\numberline {4.13}Calculul valorii așteptate}{20}{subsection.4.13}%
+\contentsline {subsection}{\numberline {4.14}Calculul varianței}{21}{subsection.4.14}%
+\contentsline {subsection}{\numberline {4.15}Probabilitatea ca ambele ace să intersecteze o dreaptă}{21}{subsection.4.15}%
+\contentsline {subsection}{\numberline {4.16}Rezultatul final pentru varianță}{21}{subsection.4.16}%
+\contentsline {subsection}{\numberline {4.17}Concluzie}{22}{subsection.4.17}%
+\contentsline {subsection}{\numberline {4.18}Generalizarea problemei acului lui Buffon}{23}{subsection.4.18}%
+\contentsline {subsubsection}{\numberline {4.18.1}Modelarea aleatoare}{23}{subsubsection.4.18.1}%
+\contentsline {subsubsection}{\numberline {4.18.2}Condiția geometrică de intersecție}{24}{subsubsection.4.18.2}%
+\contentsline {subsubsection}{\numberline {4.18.3}Calculul probabilității}{24}{subsubsection.4.18.3}%
+\contentsline {subsection}{\numberline {4.19}Intersecția unui ac fix cu o linie aleatoare}{25}{subsection.4.19}%
+\contentsline {subsubsection}{\numberline {4.19.1}Modelarea aleatoare}{25}{subsubsection.4.19.1}%
+\contentsline {subsubsection}{\numberline {4.19.2}Condiția de intersecție}{25}{subsubsection.4.19.2}%
+\contentsline {subsubsection}{\numberline {4.19.3}Calculul probabilității}{26}{subsubsection.4.19.3}%
+\contentsline {subsubsection}{\numberline {4.19.4}Concluzie}{26}{subsubsection.4.19.4}%
+\contentsline {subsection}{\numberline {4.20}Acul într-o rețea dreptunghiulară de drepte paralele}{27}{subsection.4.20}%
+\contentsline {subsubsection}{\numberline {4.20.1}Modelarea aleatoare}{27}{subsubsection.4.20.1}%
+\contentsline {subsubsection}{\numberline {4.20.2}Variabilele aleatoare}{27}{subsubsection.4.20.2}%
+\contentsline {subsubsection}{\numberline {4.20.3}Condițiile de intersecție}{28}{subsubsection.4.20.3}%
+\contentsline {paragraph}{Intersecție cu o dreaptă verticală.}{28}{section*.1}%
+\contentsline {paragraph}{Intersecție cu o dreaptă orizontală.}{28}{section*.2}%
+\contentsline {subsubsection}{\numberline {4.20.4}Calculul lui $P(A)$}{28}{subsubsection.4.20.4}%
+\contentsline {subsubsection}{\numberline {4.20.5}Calculul lui $P(A\cap B)$}{29}{subsubsection.4.20.5}%
+\contentsline {subsubsection}{\numberline {4.20.6}Probabilitatea totală}{29}{subsubsection.4.20.6}%
+\contentsline {subsection}{\numberline {4.21}Tipul strategiei aleatoare utilizate}{30}{subsection.4.21}%
+\contentsline {subsubsection}{\numberline {4.21.1}Algoritmi Monte Carlo}{30}{subsubsection.4.21.1}%
+\contentsline {subsubsection}{\numberline {4.21.2}De ce strategia NU este de tip Las Vegas}{30}{subsubsection.4.21.2}%
+\contentsline {subsubsection}{\numberline {4.21.3}Exemplu de algoritm Las Vegas}{31}{subsubsection.4.21.3}%
+\contentsline {subsubsection}{\numberline {4.21.4}Concluzie}{31}{subsubsection.4.21.4}%
+\contentsline {subsection}{\numberline {4.22}Observații}{31}{subsection.4.22}%
+\contentsline {section}{\numberline {5}Pachete \& Surse Bibliografice}{32}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Pachete R Utilizate}{32}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Ceaușescu Ana-Carina -- Exercițiul 1}{32}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Moga Eduard-Andrei -- Exercițiul 2}{32}{subsubsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.2}Surse Bibliografice și Documentație}{32}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Ceaușescu Ana-Carina}{32}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Moga Eduard-Andrei}{33}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Tirdea Dominic Alexandru - Exercițiul 3}{33}{subsubsection.5.2.3}%
+\contentsline {section}{\numberline {6}Dificultăți Întâmpinate}{34}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Ceaușescu Ana-Carina}{34}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Moga Eduard-Andrei}{34}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Țîrdea Dominic-Alexandru}{35}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Probleme Deschise}{37}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Ceaușescu Ana-Carina}{37}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Moga Eduard-Andrei}{37}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Țîrdea Dominic-Alexandru }{38}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Concluzii}{39}{section.8}%
