@@ -80,9 +80,9 @@
     {\large
     \textbf{Echipa:}\\[0.3cm]
     \begin{tabular}{ll}
-        \textbf{Lider:} & [Ceausescu Ana-Carina] \\[0.2cm]
+        \textbf{Lider:} & [Ceaușescu Ana-Carina] \\[0.2cm]
         \textbf{Membru:} & [Moga Eduard-Andrei] \\[0.2cm]
-        \textbf{Membru:} & [Tirdea Dominic-Alexandru] \\
+        \textbf{Membru:} & [ȚÎrdea Dominic-Alexandru] \\
     \end{tabular}
     }
     
@@ -110,8 +110,6 @@
 
 \section{Descriere Generală}
 \label{sec:descriere}
-
-\textit{Această secțiune este completată de lider (Persoana A).}
 
 \vspace{1cm}
 
@@ -1567,16 +1565,30 @@ Scripturile au fost rulate folosind \textbf{R version 4.5.2 (2025-10-31)}.
 \sectiune{Dificultăți Întâmpinate}
 \label{sec:dificultati}
 
-\subsection{Persoana A}
-
-\textit{Completat de Persoana A}
-
+\subsection{Ceaușescu Ana-Carina}
 \begin{itemize}
-    \item [Dificultate 1]
-    \item [Dificultate 2]
-    \item [Dificultate 3]
-    \item [Dificultate 4]
+    \item \textbf{Alegerea modului corect de simulare pentru metoda polară}
+
+    La început nu a fost foarte clar de ce nu este suficient să generăm direct $R$ uniform pe intervalul $[0,1]$. 
+    Rezultatele obținute în acest fel nu păreau corecte, deoarece punctele se concentrau prea mult spre centru. 
+    Abia după reluarea părții teoretice a devenit clar că trebuie folosită transformarea $R=\sqrt{U}$.
+
+    \item \textbf{Înțelegerea justificării teoretice pentru acceptare-respingere}
+
+    Deși metoda este relativ simplă ca implementare, a fost mai dificil de explicat teoretic de ce punctele acceptate sunt într-adevăr uniforme pe disc. 
+    A fost nevoie de mai multe încercări pentru a formula o explicație clară, pornind de la distribuția uniformă pe pătrat.
+
+    \item \textbf{Alegerea valorii lui $N$}
+
+    Stabilirea numărului de puncte generate a fost oarecum arbitrară. 
+    Pentru valori mici rezultatele variau mult, iar pentru valori mai mari simularea devenea mai lentă, astfel că s-a ales un compromis rezonabil, $N=1000$.
+
+    \item \textbf{Interpretarea diferențelor dintre rezultate}
+
+    Valorile obținute prin cele două metode nu au fost identice, ceea ce inițial a creat impresia că una dintre implementări este greșită. 
+    Ulterior s-a înțeles că aceste diferențe sunt normale și apar din cauza caracterului aleator al simulării.
 \end{itemize}
+
 
 \subsection{Moga Eduard-Andrei}
 
@@ -1664,15 +1676,25 @@ Scripturile au fost rulate folosind \textbf{R version 4.5.2 (2025-10-31)}.
 \sectiune{Probleme Deschise}
 \label{sec:probleme}
 
-\subsection{Persoana A}
-
-\textit{Completat de Persoana A}
+\subsection{Ceaușescu Ana-Carina}
 
 \begin{itemize}
-    \item [Problemă deschisă 1]
-    \item [Problemă deschisă 2]
-    \item [Problemă deschisă 3]
+    \item \textbf{Automatizarea generării raportului}
+
+    În forma actuală, graficele sunt generate manual și apoi inserate în document. 
+    O posibilă îmbunătățire ar fi folosirea unor instrumente precum R Markdown sau Quarto pentru a genera automat raportul direct din cod, astfel încât orice modificare a simulărilor să se reflecte imediat în documentație.
+
+    \item \textbf{Analiza erorii și intervale de încredere}
+
+    Deși în proiect sunt comparate valori empirice cu cele teoretice, nu este analizată explicit eroarea estimărilor. 
+    Ar fi utilă studierea variației erorii în funcție de numărul de simulări $N$ și adăugarea unor intervale de încredere pentru a cuantifica mai clar precizia rezultatelor.
+
+    \item \textbf{Testare și validare a implementării}
+
+    Codul a fost verificat în principal prin inspectarea rezultatelor și compararea cu valorile teoretice. 
+    O extensie ar fi introducerea unor teste automate simple, care să verifice de exemplu dacă mediile și varianțele obținute se află în intervale rezonabile.
 \end{itemize}
+
 
 \subsection{Moga Eduard-Andrei}
 
@@ -1727,7 +1749,7 @@ Scripturile au fost rulate folosind \textbf{R version 4.5.2 (2025-10-31)}.
 
     \item \textbf{Optimizare algoritmilor}
     \begin{itemize}
-      De asemenea, o problemă deschisă este optimizarea algoritmică a simulărilor. Metoda Monte Carlo utilizată este una directă (brute-force), fără tehnici de reducere a varianței. Introducerea unor metode precum importance sampling sau stratificarea domeniului ar putea conduce la estimări mai precise pentru același timp de execuție.1
+      De asemenea, o problemă deschisă este optimizarea algoritmică a simulărilor. Metoda Monte Carlo utilizată este una directă (brute-force), fără tehnici de reducere a varianței. Introducerea unor metode precum importance sampling sau stratificarea domeniului ar putea conduce la estimări mai precise pentru același timp de execuție.
     \end{itemize}
 
     
@@ -1740,11 +1762,20 @@ Scripturile au fost rulate folosind \textbf{R version 4.5.2 (2025-10-31)}.
 \sectiune{Concluzii}
 \label{sec:concluzii}
 
-\textit{Această secțiune este completată de lider (Persoana A).}
+\textit{Această secțiune este completată de lider (Ceaușescu Ana-Carina).}
 
 \vspace{1cm}
 
-[Aici liderul scrie concluziile generale ale proiectului, sintetizând rezultatele obținute de toate cele trei exerciții și reflectând asupra procesului de colaborare și învățare.]
+În cadrul acestui proiect am folosit simulări în R pentru a verifica, prin metode numerice și reprezentări grafice, rezultate teoretice discutate la curs. Cele trei exerciții au acoperit atât simularea distribuțiilor pe mulțimi geometrice, cât și explorarea distribuțiilor clasice printr-o interfață interactivă, respectiv estimarea unor probabilități geometrice prin metode de tip Monte Carlo.
+
+În \textbf{Exercițiul 1}, am comparat două abordări pentru generarea punctelor uniforme în discul unitate: acceptare-respingere din pătratul $[-1,1]^2$ și metoda coordonatelor polare. Rezultatele empirice au confirmat uniformitatea (prin distribuția punctelor în plan) și au validat valoarea teoretică $\mathbb{E}[R]=2/3$, mediile obținute fiind apropiate pentru $N=1000$.
+
+În \textbf{Exercițiul 2}, aplicația Shiny a permis vizualizarea funcțiilor de repartiție empirice pentru mai multe distribuții și transformări, împreună cu statistici descriptive și intervale de încredere. În special, s-a observat clar efectul transformărilor liniare asupra parametrilor și modul în care transformările neliniare modifică forma distribuției. Pentru sume de variabile i.i.d., rezultatele au ilustrat comportamentul așteptat din teorema limitei centrale, prin apropierea de o distribuție normală atunci când $n$ crește.
+
+În \textbf{Exercițiul 3}, simulările inspirate din problema acului lui Buffon au arătat cum probabilități geometrice pot fi estimate numeric și cum acestea converg către valorile teoretice odată cu creșterea numărului de rulări. De asemenea, s-a evidențiat diferența dintre un algoritm de tip Monte Carlo (timp fix, rezultat aproximativ) și unul de tip Las Vegas (rezultat sigur, timp aleator), prin analiza strategiilor folosite.
+
+Per ansamblu, proiectul a arătat că simularea este un instrument practic pentru a înțelege și valida rezultate teoretice, iar reprezentările grafice ajută mult la interpretarea corectă a fenomenelor. Totodată, colaborarea pe GitHub a făcut integrarea codului și a documentației mai ușoară și a ajutat la păstrarea unei structuri clare a proiectului.
+
 
 Principalele contribuții ale proiectului:
 \begin{itemize}
