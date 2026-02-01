@@ -139,24 +139,102 @@ Fiecare membru al echipei este responsabil pentru implementarea și documentarea
 \vspace{1cm}
 
 \subsection{Obiectiv}
-
-[Descrierea obiectivului exercițiului 1...]
+Obiectivul acestui exercițiu este simularea unui vector aleator $(X,Y)$ uniform distribuit pe discul unitate
+$D(1)=\{(x,y)\in\mathbb{R}^2 \mid x^2+y^2 \le 1\}$, folosind două metode:
+\begin{itemize}
+    \item metoda acceptării și respingerii (accept-reject) din pătratul $[-1,1]^2$;
+    \item metoda transformării în coordonate polare.
+\end{itemize}
+Pentru ambele metode generăm $N=1000$ puncte și comparăm media empirică a distanței față de origine cu valoarea teoretică.
 
 \subsection{Aspecte Teoretice}
 
-[Teorie matematică relevantă...]
+\subsubsection{Uniformitate pe pătrat}
+Dacă $U_1, U_2 \sim \text{Unif}([-1,1])$ sunt independente, atunci densitatea comună este
+\[
+f_{U_1,U_2}(u_1,u_2)=f_{U_1}(u_1)\,f_{U_2}(u_2)=\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4},
+\quad (u_1,u_2)\in[-1,1]^2,
+\]
+și $0$ în rest. Deci $(U_1,U_2)$ este uniform distribuit pe pătratul $[-1,1]^2$.
+
+\subsubsection{Acceptare-respingere pentru discul unitate}
+Generăm $(X,Y)$ uniform pe $[-1,1]^2$ și acceptăm punctul dacă $X^2+Y^2\le 1$.
+Punctele acceptate sunt uniforme pe $D(1)$ deoarece condiționarea unei distribuții uniforme pe o submulțime produce distribuție uniformă pe acea submulțime.
+
+\subsubsection{Distribuția lui $R$ și $\theta$ (metoda polară)}
+Pentru $(X,Y)$ uniform pe discul unitate, în coordonate polare:
+\[
+X=R\cos\theta,\qquad Y=R\sin\theta,
+\]
+unde $\theta \sim \text{Unif}(0,2\pi)$ și
+\[
+f_R(r)=2r,\quad r\in[0,1].
+\]
+Un mod practic de simulare: dacă $U\sim \text{Unif}(0,1)$, atunci $R=\sqrt{U}$ are densitatea $f_R(r)=2r$.
+
+\subsubsection{Media teoretică a distanței față de origine}
+\[
+\mathbb{E}[R]=\int_0^1 r\cdot 2r\,dr=\frac{2}{3}.
+\]
+Aceasta este valoarea cu care comparăm media empirică obținută prin simulare.
 
 \subsection{Algoritm}
 
-[Descrierea algoritmului folosit...]
+\subsubsection{Metoda 1: Acceptare-respingere}
+\begin{enumerate}
+    \item Setăm $N=1000$.
+    \item Generăm $X_i, Y_i \overset{i.i.d.}{\sim}\text{Unif}([-1,1])$.
+    \item Marcăm punctele ``acceptate'' prin condiția $X_i^2+Y_i^2\le 1$.
+    \item Reprezentăm grafic: albastru pentru punctele din disc și roșu pentru cele din afara discului.
+    \item Calculăm media distanței față de origine pentru punctele acceptate:
+    \[
+    \widehat{\mathbb{E}}[R]=\frac{1}{M}\sum_{i:\,X_i^2+Y_i^2\le 1}\sqrt{X_i^2+Y_i^2},
+    \]
+    unde $M$ este numărul punctelor acceptate.
+\end{enumerate}
+
+\subsubsection{Metoda 2: Coordonate polare}
+\begin{enumerate}
+    \item Setăm $N=1000$.
+    \item Generăm $\theta_i \sim \text{Unif}(0,2\pi)$ și $U_i \sim \text{Unif}(0,1)$ independente.
+    \item Setăm $R_i=\sqrt{U_i}$.
+    \item Construim punctele: $X_i=R_i\cos\theta_i$, $Y_i=R_i\sin\theta_i$.
+    \item Reprezentăm grafic punctele și conturul cercului unitate.
+    \item Calculăm media empirică a distanței: $\frac{1}{N}\sum_{i=1}^N R_i$ și o comparăm cu $2/3$.
+\end{enumerate}
 
 \subsection{Rezultate}
 
-[Grafice și interpretări...]
+În urma rulării simulărilor pentru $N=1000$ puncte:
+
+\begin{itemize}
+    \item media teoretică a distanței față de origine este $\mathbb{E}[R]=2/3\approx 0.6667$;
+    \item media empirică rezultată din simulări este raportată de scripturile R (vezi fișierele din \texttt{ex1/}).
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{ex1/img/accept_reject.png}
+\caption{Metoda acceptare-respingere: puncte în disc (albastru) și în afara discului (roșu).}
+\label{fig:ex1_accept}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{ex1/img/polar.png}
+\caption{Metoda polară: puncte uniforme în discul unitate și conturul cercului.}
+\label{fig:ex1_polar}
+\end{figure}
 
 \subsection{Observații}
 
-[Concluzii specifice exercițiului 1...]
+Metoda acceptare-respingere este simplă de implementat, dar are o rată de acceptare aproximativ $\pi/4 \approx 0.785$,
+deoarece aria discului este $\pi$ iar aria pătratului este $4$.
+
+Metoda polară generează direct puncte în disc fără respingeri, deci este mai eficientă.
+
+În ambele cazuri, media empirică a distanței față de origine este apropiată de valoarea teoretică $2/3$, iar diferența scade când $N$ crește.
+
 
 % ------------------------------------------------------------------------------
 % EXERCIȚIUL 2 - APLICAȚIE SHINY
